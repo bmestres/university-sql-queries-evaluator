@@ -3,7 +3,8 @@ persona.apellido1,
 persona.apellido2,
 persona.nombre
 FROM persona
-WHERE persona.tipo = 'alumno';
+WHERE persona.tipo = 'alumno'
+ORDER BY persona.apellido1 ASC;
 -- ----------------------------------------------------------------------------------------------------
 -- 2. Returns the name and two surnames of students who have not registered their phone number at the 
 -- database.
