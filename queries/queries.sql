@@ -1,7 +1,3 @@
--- ----------------------------------------------------------------------------------------------------------
--- 1. Returns a list with the first surname, second surname and name of all students. The list must be sorted 
--- alphabetically from minor to major by first surname, second surname and first name.
--- ----------------------------------------------------------------------------------------------------------
 SELECT 
 apellido1,
 apellido2,
