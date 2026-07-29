@@ -183,12 +183,11 @@ WHERE profesor.id_profesor IS NULL;
 SELECT DISTINCT
 departamento.nombre
 FROM departamento
-WHERE departamento.id NOT IN (
-SELECT profesor.id_departamento
-FROM profesor
-JOIN asignatura ON profesor.id_profesor = asignatura.id_profesor
-WHERE profesor.id_departamento IS NOT NULL
-);
+LEFT JOIN profesor ON departamento.id = profesor.id_departamento
+LEFT JOIN asignatura ON profesor.id_profesor = asignatura.id_profesor
+LEFT JOIN alumno_se_matricula_asignatura am ON asignatura.id = am.id_asignatura
+LEFT JOIN curso_escolar ON am.id_curso_escolar = curso_escolar.id
+WHERE curso_escolar.id IS NULL;
 
 -- ----------------------------------------------------
 -- 16. Returns the total number of students that exist.
